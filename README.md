@@ -1,6 +1,6 @@
 # AccountApi
 
-Spring Boot and ReactJS Application
+Spring Boot Application
 
 This project provides to create account for existing customers.
 
