@@ -6,9 +6,7 @@ This project provides to create account for existing customers.
 
 Summary
 
-
 The assessment consists of an API to be used for opening a new “current account” of already existing customers.
-
 Requirements
 
 • The API will expose an endpoint which accepts the user information (customerID, initialCredit).
@@ -22,9 +20,16 @@ Requirements
 The application has 2 apis
 
 AccountAPI
+
 CustomerAPI
+
+
 POST /v1/account - creates a new account for existing customer
+
 GET /v1/customer/{customerId} - retrieves a customer
+
 GET /v1/customer - retrieves all customers
+
+
 JUnit test coverage is 100% as well as integration tests are available.
 
