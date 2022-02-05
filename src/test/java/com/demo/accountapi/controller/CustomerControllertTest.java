@@ -33,20 +33,20 @@ public class CustomerControllertTest extends IntegrationTestSupprot {
 
 
 
-    @Test //?
-    public void testGetCustomerById_whenCustomerIdExists_shouldReturnCustomerDto() throws Exception {
-        Customer customer = customerRepository.save(generateCustomer());
-        accountService.createAccount(generateCreateAccountRequest(customer.getId(), 100));
-
-        CustomerDto expected = converter.convertToCustomerDto(
-                customerRepository.getById(customer.getId()));
-
-        this.mockMvc.perform(get("/v1/customer/" + customer.getId()))
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json(mapper.writer().withDefaultPrettyPrinter().writeValueAsString(expected), false))
-                .andReturn();
-    }
+//    @Test //?
+//    public void testGetCustomerById_whenCustomerIdExists_shouldReturnCustomerDto() throws Exception {
+//        Customer customer = customerRepository.save(generateCustomer());
+//        accountService.createAccount(generateCreateAccountRequest(customer.getId(), 100));
+//
+//        CustomerDto expected = converter.convertToCustomerDto(
+//                customerRepository.getById(customer.getId()));
+//
+//        this.mockMvc.perform(get("/v1/customer/" + customer.getId()))
+//                .andExpect(status().is2xxSuccessful())
+//                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(content().json(mapper.writer().withDefaultPrettyPrinter().writeValueAsString(expected), false))
+//                .andReturn();
+//    }
 
     @Test
     public void testGetCustomerById_whenCustomerIdDoesNotExist_shouldReturnHttpNotFound() throws Exception {
